@@ -1,4 +1,4 @@
-# Araf & Nicky — Journey Couple 💕
+Journey Couple 
 
 Sebuah jurnal cinta digital dan *memory vault* interaktif dengan estetika editorial modern, hangat, dan elegan.
 
