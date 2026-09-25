@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Romantic Couple Journal — Style Tokens & Custom Animations
+   ========================================================================== */
+
+/* Base font and background configuration */
+body {
+  background-color: #FAF7F2;
+  color: #262422;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Ambient noise & subtle grain texture */
+.bg-grain {
+  background-image: radial-gradient(rgba(180, 160, 145, 0.12) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Smooth Floating Animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+/* Pulse glow for heart icon */
+@keyframes heartGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(212, 131, 116, 0));
+  }
+  50% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 12px rgba(212, 131, 116, 0.5));
+  }
+}
+
+.heart-glow {
+  animation: heartGlow 2s ease-in-out infinite;
+}
+
+/* Polaroid subtle tilt & hover micro-interaction */
+.polaroid-card {
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 40px -10px rgba(45, 35, 30, 0.18);
+}
+
+/* Custom audio wave indicator */
+.music-bar {
+  transition: height 0.2s ease;
+}
+
+.playing .bar-1 {
+  animation: soundWave 0.8s ease-in-out infinite alternate;
+}
+
+.playing .bar-2 {
+  animation: soundWave 1.2s ease-in-out infinite alternate 0.2s;
+}
+
+.playing .bar-3 {
+  animation: soundWave 0.9s ease-in-out infinite alternate 0.4s;
+}
+
+@keyframes soundWave {
+  0% {
+    height: 4px;
+  }
+  100% {
+    height: 18px;
+  }
+}

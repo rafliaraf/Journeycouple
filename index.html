@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Araf & Nicky — Our Love Journey & Memory Vault</title>
+  <meta name="description"
+    content="A romantic, modern warm editorial love journal and memory vault inspired by wedding invitation aesthetics.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Alex+Brush&family=VT323&family=Rock+Salt&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF7F2',
+            surface: '#FFFFFF',
+            charcoal: '#262422',
+            muted: '#7D756D',
+            terracotta: '#D48374',
+            'terracotta-dark': '#B86A5C',
+            'terracotta-light': '#F6EDE9',
+            sage: '#7A8B7B',
+            'sage-light': '#EEF2EE',
+            borderWarm: '#EBE5DD',
+            sand: '#F4ECE4'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            display: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            script: ['"Alex Brush"', 'cursive'],
+            pixel: ['"VT323"', 'monospace'],
+            hand: ['"Rock Salt"', 'cursive']
+          },
+          boxShadow: {
+            'soft': '0 10px 30px -10px rgba(117, 95, 87, 0.08)',
+            'polaroid': '0 15px 35px -5px rgba(50, 40, 35, 0.12), 0 0 0 1px rgba(235, 229, 221, 0.7)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- External Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="selection:bg-terracotta selection:text-white relative">
+
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 1: HERO COVER                     -->
+  <!-- ========================================== -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Full-bleed background image with warm vignette overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/couple_hero.jpg" alt="Araf dan Nicky berjalan berdampingan di bawah pepohonan musim gugur"
+        class="w-full h-full object-cover object-[center_35%] filter contrast-[1.03] brightness-[0.96]">
+      <!-- Natural warm editorial gradient overlay that blends realistically with typography -->
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/35 to-black/40">
+      </div>
+      <div class="absolute inset-0 bg-[#d48374]/10 mix-blend-color"></div>
+    </div>
+
+    <!-- Centered Editorial Typography -->
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto py-24 flex flex-col items-center">
+
+      <!-- Top Tagline -->
+      <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs md:text-sm tracking-[0.25em] uppercase font-medium mb-6">
+        <i data-lucide="heart" class="w-3.5 h-3.5 text-terracotta-light fill-terracotta-light"></i>
+        <span>Our Journey Together</span>
+        <i data-lucide="heart" class="w-3.5 h-3.5 text-terracotta-light fill-terracotta-light"></i>
+      </div>
+
+      <!-- Main Couple Names in Editorial Serif -->
+      <h1
+        class="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-light tracking-wide text-white leading-tight mb-4 drop-shadow-md">
+        Araf <span
+          class="font-script text-terracotta-light text-5xl sm:text-7xl md:text-8xl inline-block -mx-2">&</span> Nicky
+      </h1>
+
+      <p
+        class="font-serif italic text-lg sm:text-xl md:text-2xl text-[#f3ede8] font-light max-w-2xl mb-8 tracking-wide">
+        "Writing our story together, every single day since 20 September 2026"
+      </p>
+
+      <div
+        class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-4 shadow-2xl mb-10">
+        <div class="text-center px-2">
+          <span id="counterDays"
+            class="block font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-white">0</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#f5eae3] font-medium">Hari</span>
+        </div>
+        <div class="h-8 w-px bg-white/30"></div>
+        <div class="text-center px-2">
+          <span id="counterHours"
+            class="block font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-white">0</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#f5eae3] font-medium">Jam</span>
+        </div>
+        <div class="h-8 w-px bg-white/30"></div>
+        <div class="text-center px-2">
+          <span id="counterMinutes"
+            class="block font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-white">0</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#f5eae3] font-medium">Menit</span>
+        </div>
+        <div class="h-8 w-px bg-white/30"></div>
+        <div class="text-center px-2">
+          <span id="counterSeconds"
+            class="block font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-white">0</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#f5eae3] font-medium">Detik</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <button onclick="openGalleryModal()"
+          class="group inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-surface text-charcoal font-medium text-sm tracking-wide shadow-lg hover:bg-terracotta hover:text-white transition-all duration-300 transform hover:-translate-y-0.5">
+          <span>Buka Album Kenangan</span>
+          <i data-lucide="book-open" class="w-4 h-4 text-terracotta group-hover:text-white transition"></i>
+        </button>
+        <button onclick="triggerLoveShower()"
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-medium text-sm tracking-wide hover:bg-white/20 transition-all">
+          <i data-lucide="heart" class="w-4 h-4 text-terracotta fill-terracotta animate-pulse"></i>
+          <span>Kirim Cinta</span>
+        </button>
+      </div>
+
+      <!-- Delicate Scroll Down Indicator -->
+      <a href="#our-story"
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/75 hover:text-white transition group">
+        <span class="text-[10px] uppercase tracking-[0.3em] font-medium">Scroll to explore</span>
+        <div
+          class="w-5 h-8 rounded-full border border-white/40 flex items-start justify-center p-1 group-hover:border-white">
+          <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="our-story" class="py-24 sm:py-32 px-6 max-w-7xl mx-auto relative bg-grain">
+
+    <!-- Editorial Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-20">
+      <div class="flex items-center justify-center gap-3 text-terracotta mb-3">
+        <div class="w-12 h-px bg-borderWarm"></div>
+        <i data-lucide="flower2" class="w-5 h-5"></i>
+        <div class="w-12 h-px bg-borderWarm"></div>
+      </div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal mb-3">Our Little Universe</h2>
+      <p class="text-muted text-sm sm:text-base font-light tracking-wide leading-relaxed">
+        Dua manusia dengan kepribadian berbeda, yang dipersatukan oleh secangkir kopi hangat, canda tawa larut malam,
+        dan komitmen untuk saling melengkapi.
+      </p>
+    </div>
+
+    <!-- 3-Column Symmetrical Layout (Him - Couple Center - Her) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+      <!-- Left Column: The Boyfriend Card -->
+      <div
+        class="lg:col-span-4 order-2 lg:order-1 bg-surface p-8 rounded-3xl border border-borderWarm shadow-soft relative overflow-hidden transition-all hover:border-terracotta/40">
+        <div class="absolute -top-10 -left-10 w-28 h-28 bg-sand/60 rounded-full blur-2xl"></div>
+
+        <div class="flex items-center gap-4 mb-6">
+          <img src="assets/boyfriend.jpg" alt="Foto Araf"
+            class="w-16 h-16 rounded-full object-cover object-[center_28%] border-2 border-white shadow-md">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-terracotta block">The Guy</span>
+            <h3 class="font-serif text-2xl text-charcoal font-semibold">Araf</h3>
+            <span class="text-xs text-muted">"Si Tukang Bikin Nyaman & Nyetir"</span>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-sm text-charcoal/80">
+          <div class="p-3.5 bg-ivory rounded-2xl border border-borderWarm/60">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted block mb-1">Ciri Khas & Hobi</span>
+            <p class="text-xs text-charcoal leading-relaxed">Pecinta kopi manual brew, pendengar setia cerita random
+              Nicky, dan navigator andalan tiap kali jalan bareng.</p>
+          </div>
+
+          <div class="p-3.5 bg-ivory rounded-2xl border border-borderWarm/60">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted block mb-1">Momen Paling
+              Berkesan</span>
+            <p class="text-xs text-charcoal leading-relaxed">"Waktu nemenin Nicky nyari spot foto kecil pas sore hari,
+              ketawa bareng liat hasil foto candid yang lucu dan manis."</p>
+          </div>
+
+          <div class="pt-2 border-t border-borderWarm flex items-center justify-between text-xs text-muted">
+            <span>Love Language: <strong class="text-charcoal font-medium">Acts of Service</strong></span>
+            <span
+              class="px-2.5 py-1 bg-terracotta-light text-terracotta font-semibold rounded-full text-[10px]">INFJ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Column: Circular Couple Frame with Calligraphic Ampersand -->
+      <div class="lg:col-span-4 order-1 lg:order-2 flex flex-col items-center justify-center relative my-4 lg:my-0">
+        <!-- Giant artistic decorative ampersand -->
+        <div
+          class="absolute text-[160px] sm:text-[220px] font-serif font-light text-borderWarm/90 select-none pointer-events-none -z-0 -top-12">
+          &amp;
+        </div>
+
+        <!-- Organic Circular Frame -->
+        <div class="relative z-10 p-3 rounded-full bg-white border border-borderWarm shadow-polaroid">
+          <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-2 border-terracotta/30 p-1">
+            <img src="assets/couple_bridge.jpg" alt="Araf & Nicky Full Body"
+              class="w-full h-full object-cover object-[center_25%] rounded-full hover:scale-105 transition duration-700">
+          </div>
+
+          <!-- Sweet Floating Badge -->
+          <div
+            class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white px-5 py-1.5 rounded-full border border-borderWarm shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+            <i data-lucide="heart" class="w-3.5 h-3.5 text-terracotta fill-terracotta"></i>
+            <span class="font-serif italic text-xs text-charcoal font-medium">Soulmates Together</span>
+          </div>
+        </div>
+
+        <p class="mt-8 font-serif italic text-center text-muted text-sm max-w-xs">
+          "Dalam jutaan orang di bumi, menemukanmu terasa seperti akhirnya pulang ke rumah."
+        </p>
+      </div>
+
+      <!-- Right Column: The Girlfriend Card -->
+      <div
+        class="lg:col-span-4 order-3 bg-surface p-8 rounded-3xl border border-borderWarm shadow-soft relative overflow-hidden transition-all hover:border-terracotta/40">
+        <div class="absolute -bottom-10 -right-10 w-28 h-28 bg-sage-light rounded-full blur-2xl"></div>
+
+        <div class="flex items-center gap-4 mb-6">
+          <img src="assets/girlfriend.jpg" alt="Foto Nicky"
+            class="w-16 h-16 rounded-full object-cover object-[center_42%] border-2 border-white shadow-md">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-sage block">The Girl</span>
+            <h3 class="font-serif text-2xl text-charcoal font-semibold">Nicky</h3>
+            <span class="text-xs text-muted">"Si Manis Penggemar Matcha & Sunset"</span>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-sm text-charcoal/80">
+          <div class="p-3.5 bg-ivory rounded-2xl border border-borderWarm/60">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted block mb-1">Ciri Khas & Hobi</span>
+            <p class="text-xs text-charcoal leading-relaxed">Pengamat langit sore, tukang dokumentasi momen candid, dan
+              paling jago milih kafe bernuansa tenang.</p>
+          </div>
+
+          <div class="p-3.5 bg-ivory rounded-2xl border border-borderWarm/60">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted block mb-1">Hal Lucu Favorit</span>
+            <p class="text-xs text-charcoal leading-relaxed">"Araf yang selalu salting tiap dipandang lama-lama, tapi
+              selalu perhatian dan gak pernah lupa bawain camilan favorit."</p>
+          </div>
+
+          <div class="pt-2 border-t border-borderWarm flex items-center justify-between text-xs text-muted">
+            <span>Love Language: <strong class="text-charcoal font-medium">Quality Time & Words</strong></span>
+            <span class="px-2.5 py-1 bg-sage-light text-sage font-semibold rounded-full text-[10px]">ENFP</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="py-20 bg-sand/40 border-y border-borderWarm relative overflow-hidden">
+    <!-- Subtle floral decor background -->
+    <div class="absolute -left-12 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none">
+      <i data-lucide="feather" class="w-48 h-48 text-terracotta"></i>
+    </div>
+    <div class="absolute -right-12 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none">
+      <i data-lucide="heart" class="w-48 h-48 text-sage"></i>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+
+      <!-- Bordered Elegant Quote Card -->
+      <div class="bg-surface/90 backdrop-blur-sm border border-borderWarm p-8 sm:p-14 rounded-3xl shadow-soft relative">
+
+        <!-- Decorative Quote Mark Top -->
+        <div class="flex justify-center -mt-14 sm:-mt-20 mb-4">
+          <div
+            class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-surface border border-borderWarm flex items-center justify-center text-terracotta shadow-sm">
+            <i data-lucide="quote" class="w-6 h-6 rotate-180"></i>
+          </div>
+        </div>
+
+        <blockquote
+          class="font-serif text-2xl sm:text-3xl md:text-4xl text-charcoal font-light leading-relaxed italic mb-6">
+          "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."
+        </blockquote>
+
+        <!-- Author / Song Detail -->
+        <div class="flex flex-col items-center max-w-2xl mx-auto">
+          <div class="w-10 h-0.5 bg-terracotta/40 mb-3"></div>
+
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sand/80 text-charcoal text-xs font-semibold tracking-wider uppercase mb-2">
+            <i data-lucide="music-2" class="w-3.5 h-3.5 text-terracotta"></i>
+            <span>Lagu Kenangan Kita</span>
+          </div>
+
+          <p class="font-serif text-xl sm:text-2xl font-semibold text-charcoal tracking-wide mb-1">
+            "Until I Found You"
+          </p>
+          <span class="text-xs text-muted mb-4 font-medium uppercase tracking-widest">Stephen Sanchez</span>
+
+          <p class="font-serif italic text-sm sm:text-base text-muted max-w-lg mb-6 leading-relaxed">
+            "I would never fall in love until I found her... I said, 'I would never fall unless it's you I fall into'."
+          </p>
+
+          <!-- Official Spotify Player Embed for Until I Found You -->
+          <div class="w-full max-w-lg mx-auto rounded-2xl overflow-hidden shadow-soft border border-borderWarm mb-6 bg-surface">
+            <iframe style="border-radius:16px" src="https://open.spotify.com/embed/track/0T5iIrXA4p5GsubkhuBIKV?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+
+          <!-- Spotify player is the sole music controller -->
+        </div>
+
+        <!-- Decorative Quote Mark Bottom -->
+        <div class="flex justify-center -mb-14 sm:-mb-20 mt-6">
+          <div
+            class="w-10 h-10 rounded-full bg-surface border border-borderWarm flex items-center justify-center text-terracotta shadow-sm">
+            <i data-lucide="quote" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 4: LITTLE THINGS & MILESTONES     -->
+  <!-- ========================================== -->
+  <section class="py-24 sm:py-32 px-6 max-w-7xl mx-auto bg-grain">
+
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <div class="flex items-center justify-center gap-3 text-terracotta mb-2">
+        <div class="w-10 h-px bg-borderWarm"></div>
+        <span class="text-xs uppercase tracking-[0.25em] font-semibold text-terracotta">Chapters We Cherish</span>
+        <div class="w-10 h-px bg-borderWarm"></div>
+      </div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal mb-3">Little Things & Milestones</h2>
+      <p class="text-muted text-sm sm:text-base font-light">
+        Kumpulan memori kecil yang membuat hari-hari biasa kita menjadi cerita paling istimewa.
+      </p>
+    </div>
+
+    <!-- 6-Item Grid (2 rows x 3 columns) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+      <!-- 1. First Date (Internship Era) -->
+      <div
+        class="bg-surface p-8 rounded-3xl border border-borderWarm shadow-soft hover:shadow-md hover:border-terracotta/50 transition-all duration-300 group flex flex-col justify-between">
+        <div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-terracotta-light flex items-center justify-center text-terracotta mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-terracotta block mb-1">01 • Babak
+            Pertama</span>
+          <h3 class="font-serif text-2xl text-charcoal font-semibold mb-2">First Date & Masa Magang</h3>
+          <p class="text-xs text-muted mb-4 font-medium flex items-center gap-1.5">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-terracotta"></i>
+            Jam Istirahat Siang & Obrolan Kopi
+          </p>
+          <p class="text-sm text-charcoal/80 leading-relaxed font-light">
+            Berawal dari lelahnya deadline dan tugas kantor magang, sampai akhirnya kita janjian buat makan siang bareng pas jam istirahat. Niat awal cuma makan siang dan ngopi sebentar pelepas penat, ternyata obrolannya begitu nyambung dan bikin lupa waktu. Dari rekan magang yang saling lirik malu-malu di kantor, jadi awal mula kisah paling indah.
+          </p>
+        </div>
+        <div class="pt-6 mt-6 border-t border-borderWarm/60 flex items-center justify-between text-xs text-muted">
+          <span>Era Magang Kita</span>
+          <span class="text-terracotta font-medium">Lelah hilang berganti rasa</span>
+        </div>
+      </div>
+
+      <!-- 2. Favorite Trips -->
+      <div
+        class="bg-surface p-8 rounded-3xl border border-borderWarm shadow-soft hover:shadow-md hover:border-terracotta/50 transition-all duration-300 group flex flex-col justify-between">
+        <div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-sage-light flex items-center justify-center text-sage mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-sage block mb-1">02 • Menjelajah
+            Bersama</span>
+          <h3 class="font-serif text-2xl text-charcoal font-semibold mb-2">Favorite Trips</h3>
+          <p class="text-xs text-muted mb-4 font-medium flex items-center gap-1.5">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sage"></i>
+            Kintamani & Ubud, Bali
+          </p>
+          <p class="text-sm text-charcoal/80 leading-relaxed font-light">
+            Bangun jam 5 pagi demi melihat kabut di Danau Batur, jalan santai di tepi sawah, dan menikmati semilir angin
+            dingin sambil menggenggam tangan satu sama lain.
+          </p>
+        </div>
+        <div class="pt-6 mt-6 border-t border-borderWarm/60 flex items-center justify-between text-xs text-muted">
+          <span>Mei 2024</span>
+          <span class="text-sage font-medium">Kabut & secangkir teh</span>
+        </div>
+      </div>
+
+      <!-- 3. Comfort Food / Ramen Date -->
+      <div
+        class="bg-surface p-8 rounded-3xl border border-borderWarm shadow-soft hover:shadow-md hover:border-terracotta/50 transition-all duration-300 group flex flex-col justify-between">
+        <div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-sand flex items-center justify-center text-charcoal mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="utensils" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-muted block mb-1">03 • Selera Kita</span>
+          <h3 class="font-serif text-2xl text-charcoal font-semibold mb-2">Comfort Food & Ramen</h3>
+          <p class="text-xs text-muted mb-4 font-medium flex items-center gap-1.5">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-terracotta"></i>
+            RamenYA! Plaza Asia Tasikmalaya
+          </p>
+          <p class="text-sm text-charcoal/80 leading-relaxed font-light">
+            Obat paling ampuh saat salah satu dari kita lagi butuh comfort food: semangkuk ramen hangat kuah gurih di RamenYA!, obrolan santai berdua, dan suasana hangat yang selalu bikin kita lupa lelah.
+          </p>
+        </div>
+        <div class="pt-6 mt-6 border-t border-borderWarm/60 flex items-center justify-between text-xs text-muted">
+          <span>Tasikmalaya Memory</span>
+          <span class="text-charcoal font-medium">Kuah hangat favorit berdua</span>
+        </div>
+      </div>
+
+      <!-- 4. Movie Nights & Night Drives -->
+      <div
+        class="bg-surface p-8 rounded-3xl border border-borderWarm shadow-soft hover:shadow-md hover:border-terracotta/50 transition-all duration-300 group flex flex-col justify-between">
+        <div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-terracotta-light flex items-center justify-center text-terracotta mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="car" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-terracotta block mb-1">04 • Larut
+            Malam</span>
+          <h3 class="font-serif text-2xl text-charcoal font-semibold mb-2">Night Drives & Playlist</h3>
+          <p class="text-xs text-muted mb-4 font-medium flex items-center gap-1.5">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-terracotta"></i>
+            Tol Dalam Kota & Jalanan Sepi
+          </p>
+          <p class="text-sm text-charcoal/80 leading-relaxed font-light">
+            Menyetel lagu kenangan berdua di mobil dengan volume kencang, bernyanyi bersama sambil menikmati gemerlap lampu kota tengah malam yang tenang dan syahdu.
+          </p>
+        </div>
+        <div class="pt-6 mt-6 border-t border-borderWarm/60 flex items-center justify-between text-xs text-muted">
+          <span>Playlist: "Us & City Lights"</span>
+          <span class="text-terracotta font-medium">Until I Found You</span>
+        </div>
+      </div>
+
+      <div
+        class="bg-surface p-8 rounded-3xl border border-borderWarm shadow-soft hover:shadow-md hover:border-terracotta/50 transition-all duration-300 group flex flex-col justify-between">
+        <div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-sage-light flex items-center justify-center text-sage mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="smile" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-sage block mb-1">05 • Tawa Lepas</span>
+          <h3 class="font-serif text-2xl text-charcoal font-semibold mb-2">Silly Moments & Jokes</h3>
+          <p class="text-xs text-muted mb-4 font-medium flex items-center gap-1.5">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sage"></i>
+            Di mana saja kita berada
+          </p>
+          <p class="text-sm text-charcoal/80 leading-relaxed font-light">
+            Debat sengit soal hal sepele seperti 'apakah bubur diaduk itu kriminal', sampai lomba tiru suara kucing di
+            lorong supermarket yang bikin kita malu sendiri.
+          </p>
+        </div>
+        <div class="pt-6 mt-6 border-t border-borderWarm/60 flex items-center justify-between text-xs text-muted">
+          <span>Tak terhitung</span>
+          <span class="text-sage font-medium">Always laughing with you</span>
+        </div>
+      </div>
+
+      <div
+        class="bg-surface p-8 rounded-3xl border border-borderWarm shadow-soft hover:shadow-md hover:border-terracotta/50 transition-all duration-300 group flex flex-col justify-between">
+        <div>
+          <div
+            class="w-14 h-14 rounded-2xl bg-sand flex items-center justify-center text-terracotta mb-6 group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <span class="text-[11px] font-semibold uppercase tracking-wider text-terracotta block mb-1">06 • Masa
+            Depan</span>
+          <h3 class="font-serif text-2xl text-charcoal font-semibold mb-2">Our Bucket List Next</h3>
+          <p class="text-xs text-muted mb-4 font-medium flex items-center gap-1.5">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-terracotta"></i>
+            Kyoto pas Autumn & Rumah Kecil Kita
+          </p>
+          <p class="text-sm text-charcoal/80 leading-relaxed font-light">
+            Menyaksikan daun maple berguguran di Jepang bersama, mendekorasi ruang baca rumah impian, dan terus menjadi
+            sahabat terbaik satu sama lain seumur hidup.
+          </p>
+        </div>
+        <div class="pt-6 mt-6 border-t border-borderWarm/60 flex items-center justify-between text-xs text-muted">
+          <span>Target 2026 - Selamanya</span>
+          <span class="text-terracotta font-medium">Bismillah terwujud</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- SECTION 5: POLAROID KEEPSAKES (EDITORIAL COLLAGE) -->
+  <!-- ========================================== -->
+  <section class="py-24 px-6 max-w-6xl mx-auto border-t border-borderWarm relative overflow-hidden bg-[#FAF7F2]">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <div class="flex items-center justify-center gap-3 text-terracotta mb-2">
+        <div class="w-10 h-px bg-borderWarm"></div>
+        <span class="text-xs uppercase tracking-[0.25em] font-semibold text-terracotta">Captured Memories</span>
+        <div class="w-10 h-px bg-borderWarm"></div>
+      </div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-charcoal font-normal">Polaroid Keepsakes</h2>
+      <p class="text-muted text-sm max-w-md mx-auto mt-2 font-light">
+        Setiap jepretan menyimpan debar jantung dan kebahagiaan yang tidak akan pernah pudar oleh waktu.
+      </p>
+    </div>
+
+    <!-- Editorial Layered Collage Container -->
+    <div class="relative max-w-3xl mx-auto my-8 min-h-[580px] sm:min-h-[660px] flex items-center justify-center select-none">
+      
+      <!-- Scattered Pixel Typewriter Words (Love Wins All Inspired Lyrics) -->
+      <span class="absolute top-2 left-6 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">WOULD</span>
+      <span class="absolute top-0 left-1/2 -translate-x-1/2 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">TAKE</span>
+      <span class="absolute top-6 right-8 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">ALONG?</span>
+      
+      <span class="absolute top-16 left-24 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/60 uppercase">YOU</span>
+      <span class="absolute top-14 right-32 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/60 uppercase">ME</span>
+
+      <span class="absolute top-1/3 -left-2 sm:left-4 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">TO</span>
+      <span class="absolute top-1/3 -right-2 sm:right-6 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">A</span>
+
+      <span class="absolute top-1/2 -left-3 sm:left-2 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">PLACE</span>
+      <span class="absolute top-1/2 -right-3 sm:right-4 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">I</span>
+
+      <span class="absolute bottom-28 left-4 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">CAN'T</span>
+      <span class="absolute bottom-24 right-10 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">MY</span>
+
+      <span class="absolute bottom-12 left-8 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">POOR</span>
+      <span class="absolute bottom-20 left-1/3 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">DREAM</span>
+      <span class="absolute bottom-16 right-1/3 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">WITH</span>
+      <span class="absolute bottom-4 right-6 font-pixel text-xs sm:text-sm tracking-[0.25em] text-charcoal/70 uppercase">IMAGINATION</span>
+
+      <!-- LAYER 1 (Deepest Background): Ripped Paper / Contact Sheet -->
+      <div class="absolute w-[240px] sm:w-[320px] h-[320px] sm:h-[400px] bg-white p-3 shadow-md border border-[#E0D8CE] -rotate-6 transform -translate-x-12 -translate-y-6 filter brightness-[0.96]">
+        <div class="w-full h-full overflow-hidden bg-sand/30 flex items-center justify-center">
+          <img src="assets/couple_hero.jpg" class="w-full h-full object-cover object-[center_35%] filter grayscale contrast-110 opacity-70" alt="Autumn Memory">
+        </div>
+      </div>
+
+      <!-- LAYER 2 (Back-Right Tilt): Monochromatic Road Photo (Artistic Soft Focus) -->
+      <div class="absolute w-[220px] sm:w-[290px] h-[300px] sm:h-[380px] bg-white p-3 shadow-lg border border-[#E0D8CE] rotate-6 transform translate-x-14 -translate-y-8">
+        <div class="w-full h-full overflow-hidden bg-sand/30">
+          <img src="assets/couple_editorial_bw.jpg" class="w-full h-full object-cover object-[center_20%] filter contrast-105 brightness-95" alt="Endless Road">
+        </div>
+      </div>
+
+      <!-- LAYER 3 (Center-Left Polaroid - Main Boyfriend/Hero Look) -->
+      <div class="absolute z-20 w-[210px] sm:w-[270px] bg-white p-3 pb-8 shadow-polaroid border border-[#EDE7DF] -rotate-3 transform -translate-x-16 sm:-translate-x-20 -translate-y-4 hover:rotate-0 hover:scale-105 transition-all duration-500 cursor-pointer" onclick="openGalleryModal()">
+        <div class="aspect-square w-full overflow-hidden bg-[#222] mb-3">
+          <img src="assets/couple_bridge.jpg" class="w-full h-full object-cover object-[center_20%]" alt="Araf & Nicky Wood Bridge">
+        </div>
+        <div class="px-1 text-center font-sans">
+          <p class="text-[10px] tracking-widest uppercase font-semibold text-charcoal">Walking Hand in Hand</p>
+          <span class="text-[9px] text-muted tracking-wider">Araf &bull; 2026</span>
+        </div>
+      </div>
+
+      <!-- LAYER 4 (Foreground Center-Right Polaroid - Main Girlfriend Focus) -->
+      <div class="absolute z-30 w-[220px] sm:w-[280px] bg-white p-3 pb-9 shadow-polaroid border border-[#EDE7DF] rotate-6 transform translate-x-12 sm:translate-x-16 translate-y-8 hover:rotate-0 hover:scale-105 transition-all duration-500 cursor-pointer" onclick="openGalleryModal()">
+        <div class="aspect-square w-full overflow-hidden bg-[#222] mb-3">
+          <img src="assets/couple_album_cover.jpg" class="w-full h-full object-cover object-[center_30%]" alt="Nicky & Araf Sweet Moments">
+        </div>
+        <div class="px-1 text-center font-sans">
+          <p class="text-[10px] tracking-widest uppercase font-semibold text-charcoal">Pure Happiness</p>
+          <span class="text-[9px] text-muted tracking-wider">Nicky &bull; Forever</span>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- Centered Editorial Big Title ("LOVE WINS ALL") -->
+    <div class="text-center mt-12 mb-8 relative z-20">
+      <h3 class="font-serif italic text-4xl sm:text-6xl text-[#1E3048] tracking-wider font-light drop-shadow-sm uppercase">
+        LOVE WINS ALL
+      </h3>
+      <p class="font-pixel text-xs sm:text-sm text-charcoal/70 tracking-[0.3em] uppercase mt-2">
+        BY ARAF & NICKY &bull; 2026
+      </p>
+    </div>
+
+    <!-- Gallery CTA Button -->
+    <div class="text-center mt-6">
+      <button onclick="openGalleryModal()"
+        class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-charcoal/30 bg-surface/80 backdrop-blur-sm text-charcoal hover:bg-charcoal hover:text-white font-medium text-sm tracking-wide shadow-sm hover:shadow transition duration-300">
+        <i data-lucide="image" class="w-4 h-4"></i>
+        <span>Lihat Semua Foto (Memories Vault)</span>
+      </button>
+    </div>
+
+  </section>
+
+
+
+  <footer class="bg-surface border-t border-borderWarm py-12 px-6 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+
+      <!-- Interactive Heart Button -->
+      <div class="relative mb-6">
+        <button id="floatingHeartBtn" onclick="clickLoveHeart()"
+          class="w-16 h-16 rounded-full bg-terracotta-light text-terracotta flex items-center justify-center shadow-soft hover:bg-terracotta hover:text-white transition duration-300 transform active:scale-90 group"
+          title="Klik untuk kirim detak cinta!">
+          <i data-lucide="heart" class="w-7 h-7 fill-current heart-glow"></i>
+        </button>
+        <span id="loveClickCount"
+          class="absolute -bottom-2 -right-2 bg-terracotta text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
+          99+
+        </span>
+      </div>
+
+      <p class="font-serif italic text-lg sm:text-xl text-charcoal mb-2">
+        "Loving you is the easiest and most beautiful thing I've ever done."
+      </p>
+
+      <div class="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted font-medium mb-6">
+        <span>Araf</span>
+        <span class="text-terracotta">&hearts;</span>
+        <span>Nicky</span>
+      </div>
+
+      <div class="w-16 h-px bg-borderWarm mb-6"></div>
+
+      <!-- Footer Copyright Text -->
+      <p class="text-xs text-muted font-light tracking-wide">
+        Crafted with endless love by <span class="font-semibold text-charcoal">Araf</span> for <span
+          class="font-semibold text-charcoal">Nicky</span> &bull; 2026
+      </p>
+      <p class="text-[11px] text-muted/70 mt-1 font-light">
+        A personal memory vault & love journal. Forever & always.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- ========================================== -->
+  <!-- MODAL: MEMORIES VAULT FULL GALLERY         -->
+  <!-- ========================================== -->
+  <div id="galleryModal"
+    class="fixed inset-0 z-50 bg-charcoal/80 backdrop-blur-md hidden items-center justify-center p-4 sm:p-6 transition-opacity opacity-0">
+    <div
+      class="bg-surface rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-borderWarm shadow-2xl relative">
+
+      <!-- Modal Close Button -->
+      <button onclick="closeGalleryModal()"
+        class="absolute top-6 right-6 w-10 h-10 rounded-full bg-ivory border border-borderWarm flex items-center justify-center text-charcoal hover:bg-terracotta hover:text-white transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="text-center mb-8">
+        <span class="text-xs uppercase tracking-[0.25em] font-semibold text-terracotta block mb-1">Vault
+          Collection</span>
+        <h3 class="font-serif text-3xl sm:text-4xl text-charcoal">All Our Cherished Moments</h3>
+      </div>
+
+      <!-- Special Highlight Cover: Selfie Berdua Paling Gemas -->
+      <div class="mb-6 max-w-2xl mx-auto rounded-3xl overflow-hidden border-2 border-terracotta/40 shadow-polaroid bg-ivory group relative">
+        <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden">
+          <img src="assets/couple_album_cover.jpg" alt="Araf & Nicky Cute Moments"
+            class="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition duration-700">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent flex flex-col justify-end p-6 text-white">
+          <span class="text-[11px] uppercase tracking-widest text-terracotta-light font-semibold mb-1 flex items-center gap-1.5">
+            <i data-lucide="heart" class="w-3.5 h-3.5 fill-current"></i>
+            Our Favorite Selfie
+          </span>
+          <h4 class="font-serif text-2xl sm:text-3xl font-normal">Pure Happiness with You</h4>
+          <p class="font-serif italic text-xs sm:text-sm text-sand/90 mt-1">"Momen paling jujur dan manis, saat kita berdua jadi diri sendiri."</p>
+        </div>
+      </div>
+
+      <!-- Grid of Photos in Vault (Curated Couple Moments Only) -->
+      <div class="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
+        <!-- 1. Couple Bridge (Wood Bridge) -->
+        <div class="group relative rounded-2xl overflow-hidden aspect-square border border-borderWarm bg-ivory">
+          <img src="assets/couple_bridge.jpg"
+            class="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition duration-500"
+            alt="Wood Bridge Romance">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-3.5 flex items-end">
+            <span class="text-white text-xs font-serif italic">Walking Hand in Hand, 2026</span>
+          </div>
+        </div>
+
+        <!-- 2. Couple Autumn Forest (Forehead kiss) -->
+        <div class="group relative rounded-2xl overflow-hidden aspect-square border border-borderWarm bg-ivory">
+          <img src="assets/couple_hero.jpg"
+            class="w-full h-full object-cover object-[center_35%] group-hover:scale-105 transition duration-500"
+            alt="Autumn Romance">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-3.5 flex items-end">
+            <span class="text-white text-xs font-serif italic">Sweet Forehead Kiss, 2026</span>
+          </div>
+        </div>
+
+        <!-- 3. Nicky Candid Smile -->
+        <div class="group relative rounded-2xl overflow-hidden aspect-square border border-borderWarm bg-ivory">
+          <img src="assets/girlfriend.jpg"
+            class="w-full h-full object-cover object-[center_35%] group-hover:scale-105 transition duration-500"
+            alt="Sweet Nicky">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-3.5 flex items-end">
+            <span class="text-white text-xs font-serif italic">Your Warmest Smile, 2026</span>
+          </div>
+        </div>
+
+        <!-- 4. Cinematic Monochrome Road Editorial -->
+        <div class="group relative rounded-2xl overflow-hidden aspect-square border border-borderWarm bg-ivory">
+          <img src="assets/couple_editorial_bw.jpg"
+            class="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition duration-500"
+            alt="Endless Road Editorial">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition p-3.5 flex items-end">
+            <span class="text-white text-xs font-serif italic">Endless Road Cinema, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="font-serif italic text-muted text-sm">"Setiap foto adalah pengingat betapa berharganya hari-hari yang
+          kita lalui berdua."</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- External JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+
+</html>
